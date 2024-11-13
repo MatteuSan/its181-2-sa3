@@ -1,0 +1,43 @@
+<div class="adoption-request-card">
+  <div class="adoption-request-card__header">
+    <p style="margin-block-end: 0.7rem;"><b><i>{{ user?.name }}</i> wants to adopt.</b></p>
+    <h2>{{ dog?.name }}</h2>
+    <p>{{ dog?.breed }}</p>
+  </div>
+  <div class="adoption-request-card__content">
+    <div>
+      <p>{{ dog?.description }}</p>
+    </div>
+    <div class="adoption-request-card__message">
+      <p>“{{ message }}”</p>
+    </div>
+  </div>
+  <div class="adoption-request-card__footer">
+    <app-button
+      label="Reject"
+      type="error fullwidth"
+      *ngIf="status == 'pending' && currentUser?.type == 'admin'"
+      (click)="reject()"
+    />
+    <app-button
+      label="Approve"
+      type="filled fullwidth"
+      *ngIf="status == 'pending' && currentUser?.type == 'admin'"
+      (click)="approve()"
+    />
+    <app-button
+      label="Remove Approval"
+      type="filled fullwidth"
+      *ngIf="status == 'approved' && currentUser?.type == 'admin'"
+      (click)="removeApproval()"
+      style="grid-column-start: 1; grid-column-end: 3;"
+    />
+    <app-button
+      label="Delete request"
+      type="filled fullwidth"
+      *ngIf="status == 'pending' && currentUser?.type == 'user'"
+      (click)="reject()"
+      style="grid-column-start: 1; grid-column-end: 3;"
+    />
+  </div>
+</div>

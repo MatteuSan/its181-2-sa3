@@ -1,0 +1,4 @@
+@use '@matteusan/sentro' with (
+  $token-validation: false,
+  $key-validation: false,
+);

@@ -1,0 +1,32 @@
+@use '@matteusan/sentro' with (
+  $strict-values: true,
+  $token-validation: false,
+  $key-validation: false,
+);
+
+.form-field {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+
+  .form-field__input {
+    padding: 0.7rem;
+    border-radius: 0.5rem;
+    border: 2px solid sentro.key-create('form-field-border', sentro.token-get('primary-300'));
+    background: sentro.key-create('form-field-fill', sentro.token-get('primary-200'));
+    color: sentro.key-create('form-field-ink', sentro.token-get('primary-ink'));
+    font-size: 1.2rem;
+    transition: all var(--transition-time) ease;
+    outline: none;
+    resize: none;
+
+    &:focus {
+      @include sentro.key-bind('form-field-border', sentro.token-get('accent-200'))
+    }
+  }
+
+  .form-field__label {
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
+}

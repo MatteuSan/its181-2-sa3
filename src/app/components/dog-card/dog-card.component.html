@@ -1,0 +1,52 @@
+<div class="dog-card">
+  <a href="#">
+    <div class="dog-card__header">
+      <h2>{{ name }}</h2>
+      <p>{{ breed }}</p>
+    </div>
+  </a>
+  <div class="dog-card__content">
+    <p>{{ description }}</p>
+  </div>
+  <div class="dog-card__footer">
+    <app-button
+      label="Delete dog"
+      type="fullwidth"
+      (click)="deleteDog()"
+      *ngIf="currentUser?.type == 'admin'"
+    />
+    <app-button
+      label="Adopt"
+      type="filled fullwidth"
+      (click)="showModal()"
+      [style]="currentUser?.type !== 'admin' ? 'grid-column-start: 1; grid-column-end: 3;' : ''"
+    />
+  </div>
+</div>
+
+<dialog class="modal__overlay" *ngIf="isModalShown">
+  <div class="modal">
+    <div class="modal__header">
+      <h2>Adopt {{ name }}</h2>
+      <p>{{ breed }}</p>
+    </div>
+    <div class="modal__content">
+      <app-form-field
+        label="Message"
+        type="textarea"
+        [(value)]="message"
+      />
+    </div>
+    <div class="modal__footer">
+      <app-button
+        label="Cancel"
+        (click)="hideModal()"
+      />
+      <app-button
+        label="Adopt"
+        type="filled"
+        (click)="adopt()"
+      />
+    </div>
+  </div>
+</dialog>

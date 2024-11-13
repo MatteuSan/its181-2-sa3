@@ -1,1 +1,66 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@matteusan/sentro';
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  @include sentro.token-config((
+    'primary': (
+      '200': #ffffff,
+      '300': #e7e7e7,
+      '400': #c4c4c4,
+      '600': #b2b2b2,
+      '800': #a1a1a1,
+      'ink': #000
+    ),
+    'accent': (
+      '200': #7ed38e,
+      '300': #45ab5b,
+      '400': #228836,
+      '600': #1c7a2f,
+      '800': #0c3b16,
+      'ink': #fff
+    ),
+  ));
+  --transition-time: 0.2s;
+  --shadow-color: rgba(0, 0, 0, 0.25);
+  font-family: 'Inter', sans-serif;
+}
+
+*,
+:before,
+:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  color: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+body {
+  background: sentro.key-create('body-fill', 'primary-200');
+  color: sentro.key-create('body-ink', 'primary-ink');
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-wrap {
+  width: calc(100% - 50px);
+  max-width: 1077px;
+  margin: 0 auto;
+  padding: 2.5rem 0;
+}
+
+.title-bar {
+  margin-block-end: 2rem;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}

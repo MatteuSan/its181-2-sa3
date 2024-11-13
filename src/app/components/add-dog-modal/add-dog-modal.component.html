@@ -1,0 +1,39 @@
+<app-button
+  label="Add Dog"
+  type="filled"
+  (click)="showModal()"
+/>
+
+<dialog class="modal__overlay" *ngIf="isModalShown">
+  <div class="modal">
+    <div class="modal__header">
+      <h2>Add a new dog</h2>
+      <p>Add another pupper to the list of available adoptees.</p>
+    </div>
+    <div class="modal__content" style="display: flex; flex-flow: column nowrap; gap: 1rem">
+      <app-form-field
+        label="Name"
+        type="text"
+        [(value)]="dogName" />
+      <app-form-field
+        label="Breed"
+        type="text"
+        [(value)]="dogBreed" />
+      <app-form-field
+        label="Description"
+        type="textarea"
+        [(value)]="dogDescription" />
+    </div>
+    <div class="modal__footer">
+      <app-button
+        label="Cancel"
+        (click)="hideModal()"
+      />
+      <app-button
+        label="Create dog"
+        type="filled"
+        (click)="createDog()"
+      />
+    </div>
+  </div>
+</dialog>

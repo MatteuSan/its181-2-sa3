@@ -1,27 +1,29 @@
-# SA3
+# SA3 - Final Project Instructions
+The course project is given this week so that you may already start working.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+Form a group of 5 members. Sign-up in one of the groups that I've made in the Blackboard "Groups" link.
 
-## Development server
+# Application Requirements
+Develop a full stack application similar to the sample given in the video found in Week 11. 
+The application should maintain records of dogs for adoption by the city veterinary office.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Admin Account
+The application should allow, creating/adding, viewing, updating and deleting of dog record/s.
 
-## Code scaffolding
+## User Account
+The user can view dog information.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The user can choose a dog and inform the city vet office about his interest in adopting it.
 
-## Build
+The UI design and data to be used is up to you.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Submission
+Submission link for project source codes and video demo is found in Week 14. Submit only the link of your mapua onedrive.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+# Rubrics:
+| Criteria          | Description                              | Points |
+|-------------------|------------------------------------------|--------|
+| Design            | Design of the web page                   | 30     |
+| Correctness       | Required functions are working correctly | 25     |
+| Content           | Content itself                           | 25     |
+| Demo/Presentation | Presentation video.                      | 20     |

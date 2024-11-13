@@ -1,0 +1,10 @@
+<button *ngIf="!link" class="button" [class]="handleTypes(type)" [disabled]="disabled">
+  <span class="button__label">
+    {{ label }}
+  </span>
+</button>
+<a *ngIf="link" [href]="link" class="button" [class]="handleTypes(type)">
+  <span class="button__label">
+    {{ label }}
+  </span>
+</a>

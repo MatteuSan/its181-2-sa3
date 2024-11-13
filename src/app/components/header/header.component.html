@@ -1,0 +1,11 @@
+<header class="header">
+  <div class="header__wrapper">
+    <a class="header__mast" href="/dashboard">
+      <h2>Adoption Center</h2>
+    </a>
+    <section *ngIf="isLoggedIn()" class="header__section" style="display: flex; flex-flow: row nowrap; gap: 0.7rem; align-items: center; justify-content: flex-end">
+      <p>Welcome, {{ currentUser?.name }}.</p>
+      <app-button (click)="logout()" type="filled" label="Log out" />
+    </section>
+  </div>
+</header>

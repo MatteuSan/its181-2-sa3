@@ -1,0 +1,62 @@
+@use '@matteusan/sentro' with (
+  $strict-values: true,
+  $token-validation: false,
+  $key-validation: false,
+);
+
+.header {
+  padding: 0.7rem 0;
+  background: sentro.token-get('accent-800');
+  color: sentro.token-get('accent-ink');
+
+  .header__wrapper {
+    max-width: 1077px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    .header__mast {
+      width: 100%;
+      max-width: max-content;
+    }
+
+    .header__section {
+      width: 100%;
+      max-width: max-content;
+    }
+  }
+}
+
+.navbar {
+  width: 100%;
+
+  .navbar__wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    gap: 0.7rem;
+    justify-content: center;
+    align-items: center;
+
+    .navbar-item {
+      transition: all var(--transition-time) ease;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      a {
+        display: inline-flex;
+        transition: all var(--transition-time) ease;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@use '@matteusan/sentro' with (
+  $token-validation: false,
+  $key-validation: false,
+);
+
+section {
+  width: calc(100% - 50px);
+  max-width: 540px;
+  margin: 100px auto;
+
+  h2 {
+    text-align: center;
+    margin-block-end: 2rem;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2rem;
+  }
+}

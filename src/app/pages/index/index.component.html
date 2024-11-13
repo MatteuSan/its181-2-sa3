@@ -1,0 +1,35 @@
+<main class="content-wrap">
+  <section>
+    <div class="title-bar">
+      <h1>Dogs</h1>
+      <app-add-dog-modal *ngIf="currentUser?.type == 'admin'" />
+    </div>
+    <section style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;">
+      <app-dog-card
+        *ngFor="let dog of dogs"
+        [id]="dog.id"
+        [name]="dog.name"
+        [breed]="dog.breed"
+        [description]="dog.description"
+      />
+      <p *ngIf="dogs.length === 0">No dogs found.</p>
+    </section>
+  </section>
+  <section>
+    <div class="title-bar" style="margin-block-start: 3rem">
+      <h1>Adoption Requests</h1>
+    </div>
+    <section style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem;">
+      <app-adoption-request-card
+        *ngFor="let adoptionRequest of adoptionRequests"
+        [id]="adoptionRequest.id"
+        [dog]="adoptionRequest.dog"
+        [user]="adoptionRequest.user"
+        [status]="adoptionRequest.status"
+        [message]="adoptionRequest.message"
+        [currentUser]="currentUser"
+      />
+      <p *ngIf="adoptionRequests.length === 0">No adoption requests found.</p>
+    </section>
+  </section>
+</main>

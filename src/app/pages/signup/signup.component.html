@@ -1,0 +1,14 @@
+<section>
+  <h2 style="font-weight: 900;">Sign Up</h2>
+  <p style="color: red; margin-block: 1rem" *ngIf="errorMessage">{{ errorMessage }}</p>
+  <form (ngSubmit)="signup()">
+    <app-form-field [(value)]="name" label="Name" />
+    <app-form-field [(value)]="email" label="Email" />
+    <app-form-field [(value)]="username" label="Username" />
+    <app-form-field [(value)]="password" label="Password" type="password" />
+    <div style="display: flex; flex-flow: row nowrap; gap: 0.7rem; justify-content: flex-end">
+      <app-button nativeType="submit" type="filled" label="Sign Up" />
+    </div>
+  </form>
+  <small>Already have an account? <a href="/login"><b>Log in.</b></a></small>
+</section>
